@@ -5,6 +5,7 @@ html{
 body{
     height: 100%;
     font-family: 'Manrope', sans-serif;
+    background-color: hsl(210, 46%, 95%);
 }
 
 .container{
