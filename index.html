@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Article preview component</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="tooltip" style="display: none;">
+    <p class="shareText">SHARE</p>
+    <img src="images/icon-facebook.svg" height="20px" width="20px">
+    <img src="images/icon-twitter.svg" height="20px" width="20px">
+    <img src="images/icon-pinterest.svg" height="20px" width="20px">
+  </div>
+  <div class="container">
+    <div class="row" id="row">
+      <div class="col s12 m12 l12 xl12 card-parent">
+        <div class="col s12 m10 offset-m1 l8 offset-l2 xl8 offset-xl2 card" id="card">
+          <div class="row">
+            <div class="col s12 m12 l5 xl5 card-image" id="card-image">
+              <img src="images/drawers.jpg" class="image">
+            </div>
+            <div class="col s12 m12 l7 xl7 card-content" id="card-content">
+              <div class="content">
+              <p class="header">Shift the overall look and feel by adding these wonderful touches to furniture in your home</p><br />
+              <p class="subheader">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete</p><br />
+              <div class="utility">
+                <img src="images/avatar-michelle.jpg" alt="" class="circle" height="40px" width="40px" id="avatar">
+                <div class="details">
+                  <span class="title">Michelle Appleton</span>
+                  <span class="date">22nd June 2020</span>
+                </div>
+                <a href="#!" class="secondary-content tooltipped" id="shareButton"><img id="share" src="./images/icon-share.svg"></a>
+              </div>
+
+              </div>
+              <div class="mobile-tooltip" style="display: none;">
+                <span class="shareText">SHARE</span>
+                <img src="images/icon-facebook.svg" id="shareContent" height="20px" width="20px">
+                <img src="images/icon-twitter.svg" id="shareContent" height="20px" width="20px">
+                <img src="images/icon-pinterest.svg" id="shareContent" height="20px" width="20px">
+                <a href="#!" id="shareButton"><img id="share" src="./images/icon-share.svg"></a>
+            </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script>
+    const shareButtons = document.querySelectorAll('#shareButton');
+
+    const handleCardFooter = () => {
+      const cardFooter = document.querySelector('.mobile-tooltip');
+      const utility = document.querySelector('.utility');
+
+      if(utility.style.display === "none"){
+        cardFooter.style.display = "none";
+        utility.style.display = "block";
+      } else {
+        utility.style.display = "none";
+        cardFooter.style.display = "inline-block";
+      }
+    };
+
+    const handlerTooltip = () => {
+      const tooltip = document.querySelector('.tooltip');
+      if(tooltip.style.display === "none"){
+        const rect = shareButton[0].getBoundingClientRect();
+        tooltip.style.top = `${rect.y - 100}px`;
+        tooltip.style.left = `${rect.x - 115}px`;
+        tooltip.style.display = 'flex'
+      } else {
+        tooltip.style.display = 'none'
+      }
+    }
+
+    shareButtons.forEach(button => { button.addEventListener('click', (event) => {
+      event.preventDefault();
+      if(window.innerWidth < 1000){
+        handleCardFooter();
+      } else {
+        handlerTooltip();
+      }
+    }) });
+  </script>
+</body>
+</html>

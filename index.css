@@ -1,0 +1,234 @@
+html{
+    height: 100%
+}
+
+body{
+    height: 100%;
+    font-family: 'Manrope', sans-serif;
+}
+
+.container{
+    height: 100%;
+    width: 100%; 
+}
+
+
+.row{
+    height: 100%;
+    width: 100%;
+    margin: 0 !important
+}
+
+.card-parent{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#card{
+    display: inline-block;
+    text-align: left;
+    padding: 0;
+    border-radius: 10px;
+}
+
+#card-image{
+    padding: 0px;
+    height: 100%;
+}
+
+
+.image{
+    width:100%;
+    height:100%;
+    border-radius: 10px 10px 0 0;
+}
+
+
+.content{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+#card-content{
+    padding: 0;
+    height:100%
+}
+
+.details{
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+    line-height: 1.5;
+}
+
+.title, .date{
+    display: block;
+}
+
+#share{
+    line-height: unset;
+    color: white;
+    padding: 7px;
+}
+
+#shareButton{
+    margin-top: 5px;
+    border-radius: 24px;
+    background-color: hsl(214, 17%, 51%);
+    width: 30px;
+    height: 30px;
+}
+
+.shareText{
+    color: hsl(210, 46%, 95%);
+    letter-spacing: 5px;
+    margin: 0 5% 0 5%;
+    vertical-align: super;
+}
+
+#shareContent{
+    margin: 7.5px 10% 0 0;
+}
+
+.tooltip{
+    position: absolute;
+    display: flex;
+    border-radius: 10px;
+    background-color:hsl(214, 17%, 51%);
+    padding: 20px;
+    width: 250px;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+.mobile-tooltip{
+    display: inline-block;
+    background-color:hsl(214, 17%, 51%);
+    padding: 20px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;   
+}
+
+.mobile-tooltip a{
+    float: right;
+}
+
+
+.tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    margin-left: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: hsl(214, 17%, 51%) transparent transparent transparent;
+}  
+
+p.header, p.subheader, div.utility{
+    padding: 0 7% 0 7%;
+}
+
+p.header{
+    padding-top: 7%;
+}
+
+div.utility{
+    padding-bottom: 7%;
+}
+
+@media screen and (min-width: 989px) {
+    p.header{
+        font-weight: 700;
+        font-size: 20px;
+        color: hsl(217, 9%, 35%);
+        line-height: 1.35;
+    }
+
+    p.subheader{
+        font-weight: 500;
+        font-size: 14px;
+        color:  hsl(214, 17%, 51%)
+    }
+
+    #card{
+        height: 300px
+    }
+
+    .title{
+        font-weight: 700;
+        font-size: 12px;
+        color: hsl(217, 9%, 35%);
+    }
+    
+    .date{
+        font-weight: 490;
+        font-size: 10px;
+        color: hsl(212, 23%, 69%)
+    }
+}
+
+@media screen and (max-width: 990px) {
+    p.header{
+        font-weight: 600;
+        font-size: 28px;
+        color: hsl(217, 9%, 35%);
+        line-height: 1.1;
+    }
+
+    p.subheader{
+        font-weight: 500;
+        font-size: 22px;
+        color:  hsl(214, 17%, 51%)
+    }
+
+    .title{
+        font-weight: 700;
+        font-size: 12px;
+        color: hsl(217, 9%, 35%);
+    }
+    
+    .date{
+        font-weight: 490;
+        font-size: 10px;
+        color: hsl(212, 23%, 69%)
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    p.header{
+        font-weight: 600;
+        font-size: 22px;
+        color: hsl(217, 9%, 35%);
+        line-height: 1.1;
+    }
+
+    p.subheader{
+        font-weight: 500;
+        font-size: 16px;
+        color:  hsl(214, 17%, 51%)
+    }
+
+    .title{
+        font-weight: 700;
+        font-size: 12px;
+        color: hsl(217, 9%, 35%);
+    }
+    
+    .date{
+        font-weight: 490;
+        font-size: 10px;
+        color: hsl(212, 23%, 69%)
+    }
+}
+
+
+@media only screen and (max-width: 600px) { 
+}
